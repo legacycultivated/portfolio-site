@@ -7,8 +7,16 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lyman Chan | Portfolio",
+  title: {
+    default: "Lyman Chan | Portfolio",
+    template: "%s | Lyman Chan",
+  },
   description: "Software engineering portfolio for Lyman Chan.",
+  openGraph: {
+    title: "Lyman Chan | Portfolio",
+    description: "Software engineering portfolio for Lyman Chan.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

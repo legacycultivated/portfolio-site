@@ -9,19 +9,13 @@ const sectionPlaceholders = [
 export default function Home() {
   return (
     <div className="container py-10 sm:py-14">
-      <section className="grid min-h-[60vh] content-center gap-6 py-12">
+      <section className="grid min-h-[50vh] content-center gap-4 py-12">
         <p className="text-sm font-medium text-muted-foreground">
-          Portfolio architecture shell
+          Phase 1 layout shell
         </p>
-        <div className="max-w-3xl space-y-4">
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Lyman Chan
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Initial layout, navigation, theme, and component structure are in
-            place. Final section content and styling belong to later phases.
-          </p>
-        </div>
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          Portfolio structure placeholder
+        </h1>
       </section>
 
       <div className="space-y-8">
@@ -29,11 +23,11 @@ export default function Home() {
           <section
             key={section.id}
             id={section.id}
-            className="scroll-mt-24 rounded-lg border bg-background p-6"
+            className="min-h-40 scroll-mt-24 rounded-lg border bg-background p-6"
           >
             <h2 className="text-2xl font-semibold">{section.label}</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Placeholder for the future {section.label.toLowerCase()} section.
+              Anchor target reserved for a later phase.
             </p>
           </section>
         ))}
