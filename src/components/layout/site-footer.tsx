@@ -1,9 +1,11 @@
 import Link from "next/link";
 
+import { profile } from "@/data/profile";
+
 const footerLinks = [
-  { href: "https://github.com/", label: "GitHub" },
-  { href: "https://www.linkedin.com/", label: "LinkedIn" },
-  { href: "mailto:hello@example.com", label: "Email" },
+  { href: profile.links.github, label: "GitHub" },
+  { href: profile.links.linkedin, label: "LinkedIn" },
+  { href: profile.links.email, label: "Email" },
 ];
 
 export function SiteFooter() {
