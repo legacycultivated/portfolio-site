@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
+import { profile } from "@/data/profile";
 
 const navItems = [
   { href: "#about", label: "About" },
@@ -38,7 +39,7 @@ export function SiteHeader() {
             </Button>
           ))}
           <Button size="sm" asChild>
-            <Link href="/resume.pdf">Resume</Link>
+            <Link href={profile.resumeHref}>Resume</Link>
           </Button>
           <ThemeToggle />
         </nav>
@@ -74,7 +75,7 @@ export function SiteHeader() {
               </Button>
             ))}
             <Button className="mt-2 justify-start" asChild>
-              <Link href="/resume.pdf" onClick={closeMenu}>
+              <Link href={profile.resumeHref} onClick={closeMenu}>
                 Resume
               </Link>
             </Button>
