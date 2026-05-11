@@ -2,19 +2,25 @@
 
 import Link from "next/link";
 import { ArrowDown, Mail } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/profile";
 
 export function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="grid min-h-[calc(100vh-4rem)] content-center py-16 sm:py-20">
       <motion.div
         className="max-w-3xl space-y-8"
-        initial={{ opacity: 0, y: 12 }}
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease: "easeOut" }}
+        transition={
+          shouldReduceMotion
+            ? { duration: 0 }
+            : { duration: 0.45, ease: "easeOut" }
+        }
       >
         <div className="space-y-4">
           <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">

@@ -3,19 +3,34 @@ import type { Metadata } from "next";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Lyman Chan | Portfolio",
+    default: siteConfig.name,
     template: "%s | Lyman Chan",
   },
-  description: "Software engineering portfolio for Lyman Chan.",
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Lyman Chan | Portfolio",
-    description: "Software engineering portfolio for Lyman Chan.",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: "/",
+    siteName: siteConfig.name,
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+  icons: {
+    icon: "/icon.svg",
   },
 };
 
